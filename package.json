@@ -69,6 +69,7 @@
     "typography-plugin-code": "^0.16.20"
   },
   "overrides": {
+    "axios": "^1.7.7",
     "autolinker": "^4.0.0",
     "webpack-dev-middleware": "^5.3.4",
     "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {
