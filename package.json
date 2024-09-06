@@ -69,16 +69,17 @@
     "typography-plugin-code": "^0.16.20"
   },
   "overrides": {
+    "@enact/docs-utils": {
+      "documentation": {
+        "vue-template-compiler": "^1.0.28"
+      }
+    },
     "autolinker": "^4.0.0",
     "axios": "^1.7.7",
     "fork-ts-checker-webpack-plugin": "^8.0.0",
-    "gatsby-plugin-offline": {
-      "workbox-build": "^6.0.0"
-    },
     "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {
       "react": "^18.3.1"
     },
-    "vue-template-compiler": "^1.0.28",
     "webpack-dev-middleware": "^5.3.4"
   },
   "devDependencies": {
