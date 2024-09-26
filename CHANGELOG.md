@@ -5,7 +5,6 @@ The following is a curated list of changes in the Enact docs-utils module, newes
 ## [unreleased]
 
 - Changed to require node 18.12 or later.
-- Updated dependencies.
 
 ## [4.9.0] - 2024-08-07 
 
