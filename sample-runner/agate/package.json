@@ -35,7 +35,7 @@
     "@enact/agate": "enactjs/agate#develop",
     "@enact/spotlight": "^4.9.0",
     "@enact/ui": "^4.9.0",
-    "ilib": "~14.19.0",
+    "ilib": "^14.20.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
