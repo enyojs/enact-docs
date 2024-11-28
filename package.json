@@ -69,6 +69,7 @@
     "typography-plugin-code": "^0.16.20"
   },
   "overrides": {
+    "autolinker": "^4.0.0",
     "cookie": "^0.7.2"
   },
   "devDependencies": {
