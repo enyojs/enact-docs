@@ -37,9 +37,9 @@ const Doc = class ReduxDocList extends Component {
 			core: imagesFromProps[0].node.publicURL,
 			i18n: imagesFromProps[1].node.publicURL,
 			moonstone: imagesFromProps[2].node.publicURL,
-			spotlight: imagesFromProps[3].node.publicURL,
-			ui: imagesFromProps[4].node.publicURL,
-			webos: imagesFromProps[5].node.publicURL
+			spotlight: imagesFromProps[5].node.publicURL,
+			ui: imagesFromProps[3].node.publicURL,
+			webos: imagesFromProps[4].node.publicURL
 		};
 
 		return (
