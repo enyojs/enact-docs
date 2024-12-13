@@ -31,31 +31,24 @@ const Doc = class ReduxDocList extends Component {
 		const componentDocs = data.modulesList.edges.filter((page) =>
 			page.node.fields.slug.includes('/docs/modules/'));
 		let lastLibrary;
-		let coreLogo, i18nLogo, sandstoneLogo, spotlightLogo, uiLogo, webosLogo;
-		// assign each library its logo
-		for (let i = 0; i < data.image.edges.length; i ++) {
-			if (data.image.edges[i].node.publicURL.includes('core')) {
-				coreLogo = data.image.edges[i].node.publicURL;
-			} else if (data.image.edges[i].node.publicURL.includes('i18n')) {
-				i18nLogo = data.image.edges[i].node.publicURL;
-			} else if (data.image.edges[i].node.publicURL.includes('sandstone')) {
-				sandstoneLogo = data.image.edges[i].node.publicURL;
-			} else if (data.image.edges[i].node.publicURL.includes('spotlight')) {
-				spotlightLogo = data.image.edges[i].node.publicURL;
-			} else if (data.image.edges[i].node.publicURL.includes('ui')) {
-				uiLogo = data.image.edges[i].node.publicURL;
-			} else if (data.image.edges[i].node.publicURL.includes('webos')) {
-				webosLogo = data.image.edges[i].node.publicURL;
-			}
+		let imagesFromProps = [];
+		for (let i = 0; i < data.image.edges.length; i++) {
+			imagesFromProps.push(data.image.edges[i].node.publicURL);
 		}
+		const coreLogoIndex = imagesFromProps.findIndex(index => index.includes('core'));
+		const i18nLogoIndex = imagesFromProps.findIndex(index => index.includes('i18n'));
+		const moonstoneLogoIndex = imagesFromProps.findIndex(index => index.includes('moonstone'));
+		const spotlightLogoIndex = imagesFromProps.findIndex(index => index.includes('spotlight'));
+		const uiLogoIndex = imagesFromProps.findIndex(index => index.includes('ui'));
+		const webosLogoIndex = imagesFromProps.findIndex(index => index.includes('webos'));
 
 		const packageImages = {
-			core: coreLogo,
-			i18n: i18nLogo,
-			sandstone: sandstoneLogo,
-			spotlight: spotlightLogo,
-			ui: uiLogo,
-			webos: webosLogo
+			core: imagesFromProps[coreLogoIndex],
+			i18n: imagesFromProps[i18nLogoIndex],
+			moonstone: imagesFromProps[moonstoneLogoIndex],
+			spotlight: imagesFromProps[spotlightLogoIndex],
+			ui: imagesFromProps[uiLogoIndex],
+			webos: imagesFromProps[webosLogoIndex]
 		};
 
 		return (
