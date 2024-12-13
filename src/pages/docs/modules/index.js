@@ -31,15 +31,31 @@ const Doc = class ReduxDocList extends Component {
 		const componentDocs = data.modulesList.edges.filter((page) =>
 			page.node.fields.slug.includes('/docs/modules/'));
 		let lastLibrary;
-		const imagesFromProps = data.image.edges;
+		let coreLogo, i18nLogo, sandstoneLogo, spotlightLogo, uiLogo, webosLogo;
+		// assign each library its logo
+		for (let i = 0; i < data.image.edges.length; i ++) {
+			if (data.image.edges[i].node.publicURL.includes('core')) {
+				coreLogo = data.image.edges[i].node.publicURL;
+			} else if (data.image.edges[i].node.publicURL.includes('i18n')) {
+				i18nLogo = data.image.edges[i].node.publicURL;
+			} else if (data.image.edges[i].node.publicURL.includes('sandstone')) {
+				sandstoneLogo = data.image.edges[i].node.publicURL;
+			} else if (data.image.edges[i].node.publicURL.includes('spotlight')) {
+				spotlightLogo = data.image.edges[i].node.publicURL;
+			} else if (data.image.edges[i].node.publicURL.includes('ui')) {
+				uiLogo = data.image.edges[i].node.publicURL;
+			} else if (data.image.edges[i].node.publicURL.includes('webos')) {
+				webosLogo = data.image.edges[i].node.publicURL;
+			}
+		}
 
 		const packageImages = {
-			core: imagesFromProps[0].node.publicURL,
-			i18n: imagesFromProps[1].node.publicURL,
-			moonstone: imagesFromProps[2].node.publicURL,
-			spotlight: imagesFromProps[5].node.publicURL,
-			ui: imagesFromProps[3].node.publicURL,
-			webos: imagesFromProps[4].node.publicURL
+			core: coreLogo,
+			i18n: i18nLogo,
+			sandstone: sandstoneLogo,
+			spotlight: spotlightLogo,
+			ui: uiLogo,
+			webos: webosLogo
 		};
 
 		return (
