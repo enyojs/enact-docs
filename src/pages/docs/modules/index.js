@@ -35,6 +35,7 @@ const Doc = class ReduxDocList extends Component {
 		for (let i = 0; i < data.image.edges.length; i++) {
 			imagesFromProps.push(data.image.edges[i].node.publicURL);
 		}
+		console.log(imagesFromProps);
 		const coreLogoIndex = imagesFromProps.findIndex(index => index.includes('core'));
 		const i18nLogoIndex = imagesFromProps.findIndex(index => index.includes('i18n'));
 		const moonstoneLogoIndex = imagesFromProps.findIndex(index => index.includes('moonstone'));
