@@ -68,9 +68,9 @@ const Doc = class ReduxDocList extends Component {
 								const library = linkText.split('/')[0];
 								if (library && libraryDescriptions[library] && library !== lastLibrary) {
 									lastLibrary = library;
-									let image = packageImages.hasOwnProperty(library) ?
-										packageImages[library] :
-										withPrefix(libraryDescriptions[library].icon);
+									const image = libraryDescriptions[library].icon ?
+										withPrefix(libraryDescriptions[library].icon) :
+										packageImages[library];
 									return (
 										<GridItem
 											className={componentCss.gridItem}
