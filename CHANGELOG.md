@@ -2,7 +2,11 @@
 
 The following is a curated list of changes in the Enact docs-utils module, newest changes on the top.
 
-## [unreleased] 
+## [unreleased]
+
+- Changed to require node 18.12.0 or later.
+
+## [4.9.0] - 2024-08-07 
 
 - Removed `broken-link-checker` dependency.
 

@@ -31,15 +31,24 @@ const Doc = class ReduxDocList extends Component {
 		const componentDocs = data.modulesList.edges.filter((page) =>
 			page.node.fields.slug.includes('/docs/modules/'));
 		let lastLibrary;
-		const imagesFromProps = data.image.edges;
+		let imagesFromProps = [];
+		for (let i = 0; i < data.image.edges.length; i++) {
+			imagesFromProps.push(data.image.edges[i].node.publicURL);
+		}
+		const coreLogoIndex = imagesFromProps.findIndex(index => index.includes('core'));
+		const i18nLogoIndex = imagesFromProps.findIndex(index => index.includes('i18n'));
+		const moonstoneLogoIndex = imagesFromProps.findIndex(index => index.includes('moonstone'));
+		const spotlightLogoIndex = imagesFromProps.findIndex(index => index.includes('spotlight'));
+		const uiLogoIndex = imagesFromProps.findIndex(index => index.includes('ui'));
+		const webosLogoIndex = imagesFromProps.findIndex(index => index.includes('webos'));
 
 		const packageImages = {
-			core: imagesFromProps[0].node.publicURL,
-			i18n: imagesFromProps[1].node.publicURL,
-			moonstone: imagesFromProps[2].node.publicURL,
-			spotlight: imagesFromProps[3].node.publicURL,
-			ui: imagesFromProps[4].node.publicURL,
-			webos: imagesFromProps[5].node.publicURL
+			core: imagesFromProps[coreLogoIndex],
+			i18n: imagesFromProps[i18nLogoIndex],
+			moonstone: imagesFromProps[moonstoneLogoIndex],
+			spotlight: imagesFromProps[spotlightLogoIndex],
+			ui: imagesFromProps[uiLogoIndex],
+			webos: imagesFromProps[webosLogoIndex]
 		};
 
 		return (
