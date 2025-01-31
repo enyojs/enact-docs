@@ -73,9 +73,9 @@ export default class EnactLiveEdit extends Component {
 	render () {
 		if (this.state.ready) {
 			const theme = getThemeName(this.props.name);
+			const colorPicker = this.props.code.includes('ColorPicker') ? css.dropdownSandstoneMoonstone : '';
 			const dropdownClass = theme === 'agate' ? css.dropdownAgate : css.dropdownSandstoneMoonstone;
 			const dropdown = this.props.code.includes('Dropdown') ? dropdownClass : '';
-			const colorPicker = this.props.code.includes('ColorPicker') ? css.colorPicker : '';
 			return (
 				// eslint-disable-next-line jsx-a11y/iframe-has-title
 				<iframe
